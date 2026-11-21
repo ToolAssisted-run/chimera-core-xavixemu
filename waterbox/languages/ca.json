@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' té la mida i la suma de comprovació de %2, però no és la mateixa imatge.",
+		"error.bad_zip": "'%1' no és un fitxer ZIP llegible.",
+		"error.no_game": "No hi ha cap fitxer de joc al projecte.",
+		"error.no_machine": "No hi havia prou memòria per crear la màquina.",
+		"error.not_plain": "%1 necessita %2, cosa que aquest nucli no admet. Només executa jocs XaviX que fan servir un comandament senzill.",
+		"error.not_read": "No s'ha pogut llegir '%1'.",
+		"error.save_name": "El fitxer de dades desades es diu '%1'. Només es pot tornar a posar el fitxer que aquest nucli exporta per al joc, '%2'.",
+		"error.save_size": "'%1' fa %2 bytes. Les dades desades del joc fan %3 bytes.",
+		"error.too_large": "'%1' és massa gran per ser un joc XaviX.",
+		"error.unknown_game": "'%1' no és un joc XaviX que aquest nucli conegui. Doneu el fitxer ZIP d'un joc tal com el diu MAME (per exemple epo_ebox.zip) o només la seva imatge ROM.",
+		"reason.analog": "palanques analògiques o un volant",
+		"reason.keyboard": "un teclat i un ratolí",
+		"reason.motion": "una càmera o un sensor de moviment",
+		"reason.scanner": "un lector de targetes",
+		"reason.xavix2": "la màquina XaviX 2",
+		"slot.game": "Joc",
+		"slot.game.help": "El joc XaviX: el seu fitxer ZIP tal com el diu MAME (per exemple epo_ebox.zip) o només la seva imatge ROM (.bin). Només s'accepten les imatges exactes que XaviXEmu coneix.",
+		"slot.savedata": "Dades desades",
+		"slot.savedata.help": "Les dades recordades del joc amb què començar, en lloc d'un joc nou. És el fitxer que escriu Emulador > Exporta les dades desades..., amb el nom del joc (per exemple epo_ebox.sav). Torneu-lo a posar amb el mateix nom. El fitxer no es modifica mai. Deixeu-lo buit per començar de zero."
+	}
+}

@@ -1,0 +1,37 @@
+diff --git a/src/core/xavix_machine.c b/src/core/xavix_machine.c
+index cd82a7d..143e823 100644
+--- a/src/core/xavix_machine.c
++++ b/src/core/xavix_machine.c
+@@ -144,11 +144,18 @@ static void sprite_dma_trigger(xavix_machine *machine, uint8_t data)
+ 	}
+ }
+ 
++/* Chimera: the frontend learns that the program read its buttons. */
++void (*xavix_machine_input0_read_hook)(void);
++
+ static uint8_t raw_io_input(xavix_machine *machine, unsigned port)
+ {
+ 	xavix_machine_state *state = &machine->state;
+ 	if (port == 0)
++	{
++		if (xavix_machine_input0_read_hook)
++			xavix_machine_input0_read_hook();
+ 		return state->input0;
++	}
+ 	if (machine->hooks.read_io1)
+ 		return machine->hooks.read_io1(machine->hooks.context, state->io_direction[1]);
+ 	{
+diff --git a/src/core/xavix_machine.h b/src/core/xavix_machine.h
+index 07e294f..c595c31 100644
+--- a/src/core/xavix_machine.h
++++ b/src/core/xavix_machine.h
+@@ -114,6 +114,9 @@ typedef struct xavix_machine
+ 	uint32_t nvram_write_generation;
+ } xavix_machine;
+ 
++/* Chimera: called each time the program reads the first button port. */
++extern void (*xavix_machine_input0_read_hook)(void);
++
+ void xavix_machine_init(xavix_machine *machine, const uint8_t *rom, size_t rom_size);
+ void xavix_machine_reset(xavix_machine *machine);
+ void xavix_machine_set_hooks(xavix_machine *machine, const xavix_machine_hooks *hooks);

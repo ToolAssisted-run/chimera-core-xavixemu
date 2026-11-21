@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' 的大小和校验和与 %2 相同,但不是同一个镜像。",
+		"error.bad_zip": "'%1' 不是可读取的 ZIP 文件。",
+		"error.no_game": "项目中没有游戏文件。",
+		"error.no_machine": "内存不足,无法创建机器。",
+		"error.not_plain": "%1 需要%2,此核心不支持。它只运行使用普通手柄的 XaviX 游戏。",
+		"error.not_read": "无法读取 '%1'。",
+		"error.save_name": "存档数据文件名为 '%1'。只能放回此核心为该游戏导出的文件 '%2'。",
+		"error.save_size": "'%1' 为 %2 字节。该游戏的存档数据为 %3 字节。",
+		"error.too_large": "'%1' 太大,不可能是 XaviX 游戏。",
+		"error.unknown_game": "'%1' 不是此核心认识的 XaviX 游戏。请提供 MAME 命名的游戏 ZIP 文件(如 epo_ebox.zip)或单独的 ROM 镜像。",
+		"reason.analog": "模拟摇杆或方向盘",
+		"reason.keyboard": "键盘和鼠标",
+		"reason.motion": "摄像头或动作传感器",
+		"reason.scanner": "读卡器",
+		"reason.xavix2": "XaviX 2 机器",
+		"slot.game": "游戏",
+		"slot.game.help": "XaviX 游戏:MAME 命名的 ZIP 文件(如 epo_ebox.zip),或单独的 ROM 镜像(.bin)。只接受 XaviXEmu 认识的精确镜像。",
+		"slot.savedata": "存档数据",
+		"slot.savedata.help": "游戏记住的数据,用来代替全新的游戏开始。这是 模拟器 > 导出存档数据... 写出的文件,以游戏命名(如 epo_ebox.sav)。请用相同的名字放回。该文件不会被修改。留空则从头开始。"
+	}
+}

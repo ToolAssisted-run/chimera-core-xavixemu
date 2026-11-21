@@ -1,0 +1,228 @@
+name: chimera waterbox core
+
+# The core as Chimera ships it: a sandboxed core.wbx package. The tests that
+# need no game (XaviXEmu's own unit tests, the table of ROM sets and its
+# refusals, the patches, the package) run here. The tests that play a game say
+# SKIP: Excite Boxing may not be distributed, so they run where it is on hand
+# (docs/PLAN.md). Built and tested for x86_64 Linux only; Windows, macOS and
+# aarch64 are not proved.
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+  schedule:
+    # 04:00 UTC. A nightly is published only when main moved since the last one;
+    # the reusable workflow checks, so an unchanged core costs one idle run.
+    - cron: '0 4 * * *'
+
+# Keyed by the EVENT as well as the ref. The nightly schedule and a push to
+# main are the same workflow on the same ref, so without the event in the key
+# whichever starts second cancels the first - and because the publish depends
+# on the gate that was cancelled, the release is skipped with nothing anywhere
+# reporting a failure. They collide at all because GitHub runs these crons
+# hours late: this one asks for 04:00 and starts around 08:30. A push still
+# supersedes an older push on the same ref, which is what cancel-in-progress
+# is for.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+
+env:
+  CHIMERA_REF: main
+
+jobs:
+
+  core-gate:
+    # The fast half: the sandboxed core must emulate byte-identically to the
+    # same sources built for the host, and survive a savestate round-trip
+    # around every frame. No Chimera window or display involved; the two
+    # checks through chimera-run say SKIP here and run in the other job.
+    name: core gate (native == sandbox == rerecord)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Check out Chimera (for the miniBox waterbox host and toolchain)
+        uses: actions/checkout@v6
+        with:
+          repository: ToolAssisted-run/chimera
+          ref: ${{ env.CHIMERA_REF }}
+          path: chimera-checkout
+          submodules: false
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends meson ninja-build build-essential python3
+
+      - name: Check out miniBox
+        working-directory: chimera-checkout
+        run: git submodule update --init extern/chimera-common-minibox
+
+      - name: Which Meson the runner has
+        # a build folder one Meson set up, another cannot read: the runner's
+        # Meson changed on 2026-11-12 and every cached miniBox build failed
+        id: meson
+        run: echo "version=$(meson --version)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache the guest toolchain
+        uses: actions/cache@v4
+        with:
+          path: |
+            chimera-checkout/extern/chimera-common-minibox/build/meson-linux
+          key: guest-c-meson${{ steps.meson.outputs.version }}-${{ runner.os }}-${{ hashFiles('chimera-checkout/extern/chimera-common-minibox/.git') }}-${{ hashFiles('chimera-checkout/extern/chimera-common-minibox/meson.build') }}
+
+      - name: Build miniBox (host + guest toolchain)
+        run: |
+          mb="$PWD/chimera-checkout/extern/chimera-common-minibox"
+          # the host library and the C guest toolchain; XaviXEmu is plain C
+          [ -f "$mb/build/meson-linux/build.ninja" ] || meson setup "$mb/build/meson-linux" "$mb"
+          meson compile -C "$mb/build/meson-linux"
+
+      - name: Build the native reference and sandbox drivers
+        run: |
+          meson setup build/meson-native -Dminibox_dir="$PWD/chimera-checkout/extern/chimera-common-minibox"
+          ninja -C build/meson-native
+
+      - name: Build the waterbox core
+        run: |
+          MINIBOX_DIR="$PWD/chimera-checkout/extern/chimera-common-minibox" sh waterbox/setup-guest.sh
+          ninja -C build/meson-guest
+
+      - name: Core tests (the ones that need no game; the others say SKIP)
+        run: ./waterbox/run-gate.sh
+
+      - name: Upload core.wbx
+        uses: actions/upload-artifact@v7
+        with:
+          name: core-wbx
+          path: |
+            build/meson-guest/core.wbx
+            waterbox/waterbox.config
+          retention-days: 90
+
+  frontend-gate:
+    # The other half: the package running inside the real frontend (Chimera
+    # window, run headless, through the generic waterbox adapter). The
+    # package's default keybinds must become the frontend's, and, where a game
+    # is on hand, its main RAM must match the native reference. Then Chimera's
+    # own runner and its contract tests, which need a built Chimera.
+    name: frontend gate (Chimera)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Check out Chimera
+        uses: actions/checkout@v6
+        with:
+          repository: ToolAssisted-run/chimera
+          ref: ${{ env.CHIMERA_REF }}
+          path: chimera-checkout
+          submodules: recursive
+
+      - name: Cache Qt
+        uses: actions/cache@v4
+        with:
+          path: ~/qt
+          key: qt-6.12.0-linux-aqt-3.3.0
+
+      - name: Build Chimera (the engine, chimera-run and the window)
+        run: chimera-checkout/tools/ci-chimera.sh "$HOME/qt"
+
+      - name: Build the native reference
+        run: |
+          meson setup build/meson-native -Dminibox_dir="$PWD/chimera-checkout/extern/chimera-common-minibox"
+          # run-native only here: run-wbx links miniBox's host library, which
+          # the next steps build; the chimera-run step builds the rest
+          ninja -C build/meson-native run-native
+
+      - name: Which Meson the runner has
+        # a build folder one Meson set up, another cannot read: the runner's
+        # Meson changed on 2026-11-12 and every cached miniBox build failed
+        id: meson
+        run: echo "version=$(meson --version)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache the guest toolchain
+        uses: actions/cache@v4
+        with:
+          path: |
+            chimera-checkout/extern/chimera-common-minibox/build/meson-linux
+          key: guest-c-meson${{ steps.meson.outputs.version }}-${{ runner.os }}-${{ hashFiles('chimera-checkout/extern/chimera-common-minibox/.git') }}-${{ hashFiles('chimera-checkout/extern/chimera-common-minibox/meson.build') }}
+
+      - name: Build miniBox (host + guest toolchain)
+        run: |
+          mb="$PWD/chimera-checkout/extern/chimera-common-minibox"
+          # the host library and the C guest toolchain; XaviXEmu is plain C
+          [ -f "$mb/build/meson-linux/build.ninja" ] || meson setup "$mb/build/meson-linux" "$mb"
+          meson compile -C "$mb/build/meson-linux"
+
+      - name: Build and install the waterbox core package
+        # The commit is the core's authoritative version: this build is the one
+        # that publishes the artifact, so what it stamps is what a movie can
+        # cite. A package built by hand stamps "+local" instead.
+        env:
+          CORE_VERSION: ${{ github.sha }}
+        run: ./waterbox/build-package.sh -m "$PWD/chimera-checkout/extern/chimera-common-minibox" -r "$PWD/chimera-checkout"
+
+      - name: Frontend gate
+        run: ./waterbox/tests/run-frontend.sh --chimera-root "$GITHUB_WORKSPACE/chimera-checkout"
+
+      - name: Core tests through chimera-run
+        # the whole core test script again, now with Chimera's runner (the
+        # checks that play a game say SKIP here)
+        env:
+          CHIMERA_ROOT: ${{ github.workspace }}/chimera-checkout
+        run: |
+          ninja -C build/meson-native
+          ./waterbox/run-gate.sh
+
+      - name: The package through Chimera's contract tests
+        # readable, built for an ABI this frontend runs, texts in every
+        # language, binds only buttons its controller declares, stamps a version
+        env:
+          CHIMERA_CORES_DIR: ${{ github.workspace }}/chimera-checkout/build/Cores
+        run: chimera-checkout/build/meson-linux/source/ui/test-packages
+
+      - name: Publish the core package
+        uses: actions/upload-artifact@v7
+        with:
+          name: xavixemu-${{ github.sha }}
+          path: chimera-checkout/build/Cores/xavixemu.chimeraCore
+          if-no-files-found: error
+
+      - name: Upload the frontend work dir on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: frontend-gate-work
+          path: waterbox/tests/work/
+
+  publish:
+    # What the gates passed, published as this core's own release: an immutable
+    # `nightly-YYYY-MM-DD` from the scheduled run, or from one started by hand.
+    # A push to main publishes nothing. Chimera ships no cores and downloads
+    # none: a user downloads the package from here and puts it in Chimera's
+    # Cores folder.
+    #
+    # The logic is Chimera's tools/publish-core.sh, called through one reusable
+    # workflow, so every core publishes the same way and there is one place to
+    # change it.
+    name: publish
+    needs: [ core-gate, frontend-gate ]
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+    uses: ToolAssisted-run/chimera/.github/workflows/publish-core.yml@main
+    with:
+      core-id: xavixemu
+      artifact: xavixemu-${{ github.sha }}
+      package: xavixemu.chimeraCore

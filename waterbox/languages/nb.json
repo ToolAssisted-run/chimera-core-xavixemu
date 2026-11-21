@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' har samme størrelse og sjekksum som %2, men er ikke det samme avtrykket.",
+		"error.bad_zip": "'%1' er ikke en lesbar ZIP-fil.",
+		"error.no_game": "Det er ingen spillfil i prosjektet.",
+		"error.no_machine": "Det var ikke nok minne til å lage maskinen.",
+		"error.not_plain": "%1 krever %2, noe denne kjernen ikke støtter. Den spiller bare XaviX-spill som bruker en vanlig kontroller.",
+		"error.not_read": "Kunne ikke lese '%1'.",
+		"error.save_name": "Lagringsfilen heter '%1'. Bare filen som denne kjernen eksporterer for spillet, '%2', kan legges tilbake.",
+		"error.save_size": "'%1' er %2 byte. Spillets lagrede data er %3 byte.",
+		"error.too_large": "'%1' er for stor til et XaviX-spill.",
+		"error.unknown_game": "'%1' er ikke et XaviX-spill som denne kjernen kjenner. Oppgi et spills ZIP-fil slik MAME navngir den (for eksempel epo_ebox.zip), eller bare ROM-avtrykket.",
+		"reason.analog": "analoge spaker eller ratt",
+		"reason.keyboard": "et tastatur og en mus",
+		"reason.motion": "et kamera eller en bevegelsessensor",
+		"reason.scanner": "en kortleser",
+		"reason.xavix2": "XaviX 2-maskinen",
+		"slot.game": "Spill",
+		"slot.game.help": "XaviX-spillet: ZIP-filen slik MAME navngir den (for eksempel epo_ebox.zip), eller bare ROM-avtrykket (.bin). Bare de nøyaktige avtrykkene XaviXEmu kjenner, godtas.",
+		"slot.savedata": "Lagrede data",
+		"slot.savedata.help": "Spillets husket data å starte med i stedet for et nytt spill. Det er filen Emulator > Eksporter lagrede data... skriver, oppkalt etter spillet (for eksempel epo_ebox.sav). Legg den tilbake under samme navn. Filen endres aldri. La stå tom for å starte på nytt."
+	}
+}

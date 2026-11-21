@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' ha la dimensione e il checksum di %2, ma non è la stessa immagine.",
+		"error.bad_zip": "'%1' non è un file ZIP leggibile.",
+		"error.no_game": "Nel progetto non c'è nessun file di gioco.",
+		"error.no_machine": "Non c'era abbastanza memoria per creare la macchina.",
+		"error.not_plain": "%1 richiede %2, cosa che questo core non supporta. Riproduce solo giochi XaviX che usano un semplice pad.",
+		"error.not_read": "Impossibile leggere '%1'.",
+		"error.save_name": "Il file dei dati di salvataggio si chiama '%1'. Si può rimettere solo il file che questo core esporta per il gioco, '%2'.",
+		"error.save_size": "'%1' è di %2 byte. I dati di salvataggio del gioco sono di %3 byte.",
+		"error.too_large": "'%1' è troppo grande per essere un gioco XaviX.",
+		"error.unknown_game": "'%1' non è un gioco XaviX che questo core conosce. Fornisci il file ZIP di un gioco come lo chiama MAME (ad esempio epo_ebox.zip) o la sua sola immagine ROM.",
+		"reason.analog": "stick analogici o un volante",
+		"reason.keyboard": "una tastiera e un mouse",
+		"reason.motion": "una videocamera o un sensore di movimento",
+		"reason.scanner": "un lettore di carte",
+		"reason.xavix2": "la macchina XaviX 2",
+		"slot.game": "Gioco",
+		"slot.game.help": "Il gioco XaviX: il suo file ZIP come lo chiama MAME (ad esempio epo_ebox.zip) o la sua sola immagine ROM (.bin). Sono accettate solo le immagini esatte che XaviXEmu conosce.",
+		"slot.savedata": "Dati di salvataggio",
+		"slot.savedata.help": "I dati memorizzati del gioco da cui partire, al posto di una partita nuova. È il file che scrive Emulatore > Esporta dati di salvataggio..., col nome del gioco (ad esempio epo_ebox.sav). Rimettilo con lo stesso nome. Il file non viene mai modificato. Lascia vuoto per iniziare da zero."
+	}
+}

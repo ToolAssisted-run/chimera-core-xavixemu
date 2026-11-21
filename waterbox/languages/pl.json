@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' ma rozmiar i sumę kontrolną jak %2, ale to nie ten sam obraz.",
+		"error.bad_zip": "'%1' nie jest czytelnym plikiem ZIP.",
+		"error.no_game": "W projekcie nie ma pliku gry.",
+		"error.no_machine": "Zabrakło pamięci na utworzenie maszyny.",
+		"error.not_plain": "%1 wymaga: %2. Ten rdzeń tego nie obsługuje. Uruchamia tylko gry XaviX używające zwykłego pada.",
+		"error.not_read": "Nie można odczytać '%1'.",
+		"error.save_name": "Plik zapisanych danych nazywa się '%1'. Można przywrócić tylko plik, który ten rdzeń eksportuje dla gry, '%2'.",
+		"error.save_size": "'%1' ma %2 bajtów. Zapisane dane gry mają %3 bajtów.",
+		"error.too_large": "'%1' jest za duży na grę XaviX.",
+		"error.unknown_game": "'%1' nie jest grą XaviX znaną temu rdzeniowi. Podaj plik ZIP gry nazwany jak w MAME (np. epo_ebox.zip) lub sam obraz ROM.",
+		"reason.analog": "drążki analogowe lub kierownica",
+		"reason.keyboard": "klawiatura i mysz",
+		"reason.motion": "kamera lub czujnik ruchu",
+		"reason.scanner": "czytnik kart",
+		"reason.xavix2": "maszyna XaviX 2",
+		"slot.game": "Gra",
+		"slot.game.help": "Gra XaviX: jej plik ZIP nazwany jak w MAME (np. epo_ebox.zip) lub sam obraz ROM (.bin). Akceptowane są tylko dokładne obrazy, które zna XaviXEmu.",
+		"slot.savedata": "Zapisane dane",
+		"slot.savedata.help": "Zapamiętane dane gry, od których zacząć zamiast nowej gry. To plik zapisywany przez Emulator > Eksportuj zapisane dane..., nazwany od gry (np. epo_ebox.sav). Przywróć go pod tą samą nazwą. Plik nigdy nie jest zmieniany. Zostaw puste, aby zacząć od nowa."
+	}
+}

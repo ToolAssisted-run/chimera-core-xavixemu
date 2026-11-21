@@ -1,0 +1,3 @@
+[submodule "extern/XaviXEmu"]
+	path = extern/XaviXEmu
+	url = https://github.com/BillyJr0127/XaviXEmu

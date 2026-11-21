@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' are dimensiunea și suma de control ale lui %2, dar nu este aceeași imagine.",
+		"error.bad_zip": "'%1' nu este un fișier ZIP care poate fi citit.",
+		"error.no_game": "Nu există niciun fișier de joc în proiect.",
+		"error.no_machine": "Nu a fost destulă memorie pentru a crea mașina.",
+		"error.not_plain": "%1 are nevoie de %2, ceea ce acest nucleu nu acceptă. Rulează doar jocuri XaviX care folosesc un controler simplu.",
+		"error.not_read": "Nu s-a putut citi '%1'.",
+		"error.save_name": "Fișierul cu date salvate se numește '%1'. Poate fi pus înapoi doar fișierul pe care acest nucleu îl exportă pentru joc, '%2'.",
+		"error.save_size": "'%1' are %2 octeți. Datele salvate ale jocului au %3 octeți.",
+		"error.too_large": "'%1' este prea mare pentru un joc XaviX.",
+		"error.unknown_game": "'%1' nu este un joc XaviX pe care acest nucleu îl cunoaște. Dați fișierul ZIP al unui joc așa cum îl numește MAME (de exemplu epo_ebox.zip) sau doar imaginea lui ROM.",
+		"reason.analog": "manete analogice sau un volan",
+		"reason.keyboard": "o tastatură și un mouse",
+		"reason.motion": "o cameră sau un senzor de mișcare",
+		"reason.scanner": "un cititor de carduri",
+		"reason.xavix2": "mașina XaviX 2",
+		"slot.game": "Joc",
+		"slot.game.help": "Jocul XaviX: fișierul lui ZIP așa cum îl numește MAME (de exemplu epo_ebox.zip) sau doar imaginea lui ROM (.bin). Sunt acceptate doar imaginile exacte pe care le cunoaște XaviXEmu.",
+		"slot.savedata": "Date salvate",
+		"slot.savedata.help": "Datele memorate ale jocului cu care să începeți, în loc de un joc nou. Este fișierul scris de Emulator > Exportă datele salvate..., numit după joc (de exemplu epo_ebox.sav). Puneți-l înapoi sub același nume. Fișierul nu este niciodată modificat. Lăsați gol pentru a începe de la zero."
+	}
+}

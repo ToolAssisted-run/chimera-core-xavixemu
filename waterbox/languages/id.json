@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' memiliki ukuran dan checksum yang sama dengan %2, tetapi bukan citra yang sama.",
+		"error.bad_zip": "'%1' bukan berkas ZIP yang dapat dibaca.",
+		"error.no_game": "Tidak ada berkas gim di proyek.",
+		"error.no_machine": "Memori tidak cukup untuk membuat mesin.",
+		"error.not_plain": "%1 memerlukan %2, yang tidak didukung inti ini. Inti ini hanya memainkan gim XaviX yang memakai pad biasa.",
+		"error.not_read": "Tidak dapat membaca '%1'.",
+		"error.save_name": "Berkas data simpanan bernama '%1'. Hanya berkas yang diekspor inti ini untuk gim, '%2', yang dapat dikembalikan.",
+		"error.save_size": "'%1' berukuran %2 byte. Data simpanan gim berukuran %3 byte.",
+		"error.too_large": "'%1' terlalu besar untuk menjadi gim XaviX.",
+		"error.unknown_game": "'%1' bukan gim XaviX yang dikenal inti ini. Berikan berkas ZIP gim seperti nama MAME (misalnya epo_ebox.zip) atau citra ROM-nya saja.",
+		"reason.analog": "stik analog atau kemudi",
+		"reason.keyboard": "papan ketik dan tetikus",
+		"reason.motion": "kamera atau sensor gerak",
+		"reason.scanner": "pembaca kartu",
+		"reason.xavix2": "mesin XaviX 2",
+		"slot.game": "Gim",
+		"slot.game.help": "Gim XaviX: berkas ZIP-nya seperti nama MAME (misalnya epo_ebox.zip) atau citra ROM-nya saja (.bin). Hanya citra yang persis dikenal XaviXEmu yang diterima.",
+		"slot.savedata": "Data simpanan",
+		"slot.savedata.help": "Data gim yang diingat untuk memulai, sebagai ganti gim baru. Ini berkas yang ditulis Emulator > Ekspor Data Simpanan..., dinamai menurut gim (misalnya epo_ebox.sav). Kembalikan dengan nama yang sama. Berkas tidak pernah diubah. Biarkan kosong untuk memulai dari awal."
+	}
+}

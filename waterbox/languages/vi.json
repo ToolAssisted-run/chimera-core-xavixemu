@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' có cùng kích thước và tổng kiểm tra với %2, nhưng không phải cùng một ảnh.",
+		"error.bad_zip": "'%1' không phải là tệp ZIP đọc được.",
+		"error.no_game": "Dự án không có tệp trò chơi.",
+		"error.no_machine": "Không đủ bộ nhớ để tạo máy.",
+		"error.not_plain": "%1 cần %2, điều mà lõi này không hỗ trợ. Lõi chỉ chạy các trò chơi XaviX dùng tay cầm đơn giản.",
+		"error.not_read": "Không đọc được '%1'.",
+		"error.save_name": "Tệp dữ liệu lưu có tên '%1'. Chỉ có thể đặt lại tệp mà lõi này xuất cho trò chơi, '%2'.",
+		"error.save_size": "'%1' có %2 byte. Dữ liệu lưu của trò chơi có %3 byte.",
+		"error.too_large": "'%1' quá lớn để là trò chơi XaviX.",
+		"error.unknown_game": "'%1' không phải trò chơi XaviX mà lõi này biết. Hãy đưa tệp ZIP của trò chơi theo tên MAME đặt (ví dụ epo_ebox.zip) hoặc chỉ ảnh ROM của nó.",
+		"reason.analog": "nút gạt analog hoặc vô lăng",
+		"reason.keyboard": "bàn phím và chuột",
+		"reason.motion": "camera hoặc cảm biến chuyển động",
+		"reason.scanner": "đầu đọc thẻ",
+		"reason.xavix2": "máy XaviX 2",
+		"slot.game": "Trò chơi",
+		"slot.game.help": "Trò chơi XaviX: tệp ZIP của nó theo tên MAME đặt (ví dụ epo_ebox.zip) hoặc chỉ ảnh ROM (.bin). Chỉ nhận đúng các ảnh mà XaviXEmu biết.",
+		"slot.savedata": "Dữ liệu lưu",
+		"slot.savedata.help": "Dữ liệu đã nhớ của trò chơi để bắt đầu, thay cho trò chơi mới. Đây là tệp mà Trình giả lập > Xuất dữ liệu lưu... ghi ra, đặt tên theo trò chơi (ví dụ epo_ebox.sav). Hãy đặt lại với cùng tên. Tệp không bao giờ bị thay đổi. Để trống để bắt đầu lại từ đầu."
+	}
+}

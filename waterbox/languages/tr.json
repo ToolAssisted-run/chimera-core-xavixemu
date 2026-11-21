@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1', %2 ile aynı boyut ve sağlama toplamına sahip ama aynı görüntü değil.",
+		"error.bad_zip": "'%1' okunabilir bir ZIP dosyası değil.",
+		"error.no_game": "Projede oyun dosyası yok.",
+		"error.no_machine": "Makineyi oluşturmak için yeterli bellek yoktu.",
+		"error.not_plain": "%1 için %2 gerekiyor, bunu bu çekirdek desteklemiyor. Yalnızca sade bir kumanda kullanan XaviX oyunlarını oynatır.",
+		"error.not_read": "'%1' okunamadı.",
+		"error.save_name": "Kayıt verisi dosyasının adı '%1'. Yalnızca bu çekirdeğin oyun için dışa aktardığı '%2' dosyası geri konabilir.",
+		"error.save_size": "'%1' %2 bayt. Oyunun kayıt verisi %3 bayt.",
+		"error.too_large": "'%1' bir XaviX oyunu olamayacak kadar büyük.",
+		"error.unknown_game": "'%1', bu çekirdeğin tanıdığı bir XaviX oyunu değil. MAME'in adlandırdığı gibi bir oyunun ZIP dosyasını (örneğin epo_ebox.zip) ya da yalnızca ROM görüntüsünü verin.",
+		"reason.analog": "analog çubuklar veya direksiyon",
+		"reason.keyboard": "klavye ve fare",
+		"reason.motion": "kamera veya hareket sensörü",
+		"reason.scanner": "kart okuyucu",
+		"reason.xavix2": "XaviX 2 makinesi",
+		"slot.game": "Oyun",
+		"slot.game.help": "XaviX oyunu: MAME'in adlandırdığı gibi ZIP dosyası (örneğin epo_ebox.zip) ya da yalnızca ROM görüntüsü (.bin). Yalnızca XaviXEmu'nun tanıdığı tam görüntüler kabul edilir.",
+		"slot.savedata": "Kayıt verisi",
+		"slot.savedata.help": "Yeni bir oyun yerine başlanacak, oyunun hatırlanan verisi. Emülatör > Kayıt Verisini Dışa Aktar... komutunun yazdığı dosyadır ve oyunun adını taşır (örneğin epo_ebox.sav). Aynı adla geri koyun. Dosya asla değiştirilmez. Baştan başlamak için boş bırakın."
+	}
+}

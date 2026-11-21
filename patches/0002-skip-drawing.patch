@@ -1,0 +1,25 @@
+diff --git a/src/core/drgqst_core.c b/src/core/drgqst_core.c
+index 89d334a..2e4647b 100644
+--- a/src/core/drgqst_core.c
++++ b/src/core/drgqst_core.c
+@@ -8,6 +8,9 @@
+ 
+ #include <string.h>
+ 
++/* Chimera: set by the core's own interface (waterbox/cinterface.c). */
++extern int chimera_render_enabled;
++
+ static void sync_frame_audio(drgqst_core *core, uint32_t elapsed_cycles);
+ 
+ static uint8_t cpu_read(void *opaque, xavix_cpu_bus_t bus, uint32_t address)
+@@ -731,6 +734,10 @@ const uint32_t *drgqst_core_run_frame(drgqst_core *core)
+ 		core->machine.state.nmi_asserted = 1;
+ 		sync_interrupt_lines(core);
+ 	}
++	/* Chimera: the frontend may skip drawing a frame nobody will see. The
++	 * picture is derived from the machine and feeds nothing back into it. */
++	if (!chimera_render_enabled)
++		return drgqst_core_framebuffer(core);
+ 	return render_frame(core);
+ }
+ 

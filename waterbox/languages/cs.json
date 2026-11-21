@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' má velikost a kontrolní součet jako %2, ale není to stejný obraz.",
+		"error.bad_zip": "'%1' není čitelný soubor ZIP.",
+		"error.no_game": "V projektu není soubor hry.",
+		"error.no_machine": "Nebylo dost paměti na vytvoření stroje.",
+		"error.not_plain": "%1 vyžaduje %2, což toto jádro nepodporuje. Hraje jen hry XaviX s obyčejným ovladačem.",
+		"error.not_read": "Soubor '%1' se nepodařilo přečíst.",
+		"error.save_name": "Soubor uložených dat se jmenuje '%1'. Vrátit lze jen soubor, který toto jádro pro hru exportuje, '%2'.",
+		"error.save_size": "'%1' má %2 bajtů. Uložená data hry mají %3 bajtů.",
+		"error.too_large": "'%1' je příliš velký na hru XaviX.",
+		"error.unknown_game": "'%1' není hra XaviX, kterou toto jádro zná. Zadejte soubor ZIP hry pojmenovaný jako v MAME (např. epo_ebox.zip) nebo jen obraz ROM.",
+		"reason.analog": "analogové páčky nebo volant",
+		"reason.keyboard": "klávesnici a myš",
+		"reason.motion": "kameru nebo snímač pohybu",
+		"reason.scanner": "čtečku karet",
+		"reason.xavix2": "stroj XaviX 2",
+		"slot.game": "Hra",
+		"slot.game.help": "Hra XaviX: její soubor ZIP pojmenovaný jako v MAME (např. epo_ebox.zip) nebo jen obraz ROM (.bin). Přijímají se jen přesné obrazy, které XaviXEmu zná.",
+		"slot.savedata": "Uložená data",
+		"slot.savedata.help": "Zapamatovaná data hry, se kterými začít místo nové hry. Je to soubor, který zapíše Emulátor > Exportovat uložená data..., pojmenovaný podle hry (např. epo_ebox.sav). Vraťte ho pod stejným názvem. Soubor se nikdy nemění. Nechte prázdné, abyste začali znovu."
+	}
+}

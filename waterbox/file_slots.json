@@ -1,0 +1,26 @@
+{
+  "_comment": "This file lists the kinds of file an XaviX project can hold. Chimera's New Project window is built from it. A project is one game, given as the ZIP of ROM chips a MAME-style set is, or as the bare ROM image; the save data slot can put the game's remembered data from an earlier run in its place.",
+  "slots": [
+    {
+      "id": "game",
+      "title": "slot.game",
+      "min": 1,
+      "max": 1,
+      "formats": [
+        "zip",
+        "bin"
+      ],
+      "help": "slot.game.help"
+    },
+    {
+      "id": "savedata",
+      "title": "slot.savedata",
+      "min": 0,
+      "max": 1,
+      "formats": [
+        "sav"
+      ],
+      "help": "slot.savedata.help"
+    }
+  ]
+}

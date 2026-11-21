@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "A(z) '%1' mérete és ellenőrző összege megegyezik a(z) %2 játékéval, de nem ugyanaz a képfájl.",
+		"error.bad_zip": "A(z) '%1' nem olvasható ZIP-fájl.",
+		"error.no_game": "A projektben nincs játékfájl.",
+		"error.no_machine": "Nem volt elég memória a gép létrehozásához.",
+		"error.not_plain": "A(z) %1 játékhoz %2 kell, amit ez a mag nem támogat. Csak olyan XaviX-játékokat játszik, amelyek egyszerű kontrollert használnak.",
+		"error.not_read": "A(z) '%1' nem olvasható.",
+		"error.save_name": "A mentésfájl neve '%1'. Csak az a fájl tehető vissza, amelyet ez a mag a játékhoz exportál: '%2'.",
+		"error.save_size": "A(z) '%1' mérete %2 bájt. A játék mentett adata %3 bájt.",
+		"error.too_large": "A(z) '%1' túl nagy ahhoz, hogy XaviX-játék legyen.",
+		"error.unknown_game": "A(z) '%1' nem olyan XaviX-játék, amelyet ez a mag ismer. Adja meg a játék ZIP-fájlját úgy, ahogy a MAME nevezi (például epo_ebox.zip), vagy csak a ROM-képfájlt.",
+		"reason.analog": "analóg karok vagy kormány",
+		"reason.keyboard": "billentyűzet és egér",
+		"reason.motion": "kamera vagy mozgásérzékelő",
+		"reason.scanner": "kártyaolvasó",
+		"reason.xavix2": "a XaviX 2 gép",
+		"slot.game": "Játék",
+		"slot.game.help": "A XaviX-játék: a ZIP-fájlja úgy, ahogy a MAME nevezi (például epo_ebox.zip), vagy csak a ROM-képfájlja (.bin). Csak a XaviXEmu által ismert pontos képfájlok fogadhatók el.",
+		"slot.savedata": "Mentett adatok",
+		"slot.savedata.help": "A játék megjegyzett adatai, amelyekkel új játék helyett indul. Ezt a fájlt írja az Emulátor > Mentett adatok exportálása..., a játékról elnevezve (például epo_ebox.sav). Tegye vissza ugyanezen a néven. A fájl soha nem módosul. Hagyja üresen, ha elölről kezdi."
+	}
+}

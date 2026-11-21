@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' は %2 と同じサイズとチェックサムですが、同じイメージではありません。",
+		"error.bad_zip": "'%1' は読み取れる ZIP ファイルではありません。",
+		"error.no_game": "プロジェクトにゲームファイルがありません。",
+		"error.no_machine": "マシンを作るためのメモリが足りませんでした。",
+		"error.not_plain": "%1 には%2が必要ですが、このコアは対応していません。このコアは、通常のパッドを使う XaviX のゲームだけを動かします。",
+		"error.not_read": "'%1' を読み取れませんでした。",
+		"error.save_name": "セーブデータのファイル名は '%1' です。このコアがそのゲーム用に書き出す '%2' だけを戻せます。",
+		"error.save_size": "'%1' は %2 バイトです。このゲームのセーブデータは %3 バイトです。",
+		"error.too_large": "'%1' は XaviX のゲームとしては大きすぎます。",
+		"error.unknown_game": "'%1' は、このコアが知っている XaviX のゲームではありません。MAME の名前のゲームの ZIP ファイル (例: epo_ebox.zip) か、ROM イメージ単体を指定してください。",
+		"reason.analog": "アナログスティックまたはハンドル",
+		"reason.keyboard": "キーボードとマウス",
+		"reason.motion": "カメラまたはモーションセンサー",
+		"reason.scanner": "カードスキャナー",
+		"reason.xavix2": "XaviX 2 マシン",
+		"slot.game": "ゲーム",
+		"slot.game.help": "XaviX のゲーム: MAME の名前の ZIP ファイル (例: epo_ebox.zip)、または ROM イメージ単体 (.bin)。XaviXEmu が知っている正確なイメージだけが受け付けられます。",
+		"slot.savedata": "セーブデータ",
+		"slot.savedata.help": "新しいゲームの代わりに、ここから始めるゲームの記憶データ。エミュレータ > セーブデータの書き出し... が書くファイルで、ゲーム名が付きます (例: epo_ebox.sav)。同じ名前で戻してください。ファイルは変更されません。空のままにすると最初から始めます。"
+	}
+}

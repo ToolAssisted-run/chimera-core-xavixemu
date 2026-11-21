@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' has the size and checksum of %2, but it is not the same image.",
+		"error.bad_zip": "'%1' is not a readable ZIP file.",
+		"error.no_game": "No game file is in the project.",
+		"error.no_machine": "There was not enough memory to make the machine.",
+		"error.not_plain": "%1 needs %2, which this core does not support. It plays only XaviX games that use a plain pad.",
+		"error.not_read": "Could not read '%1'.",
+		"error.save_name": "The save data file is named '%1'. Only the file this core exports for the game, '%2', can be put back.",
+		"error.save_size": "'%1' is %2 bytes. The game's save data is %3 bytes.",
+		"error.too_large": "'%1' is too large to be a XaviX game.",
+		"error.unknown_game": "'%1' is not a XaviX game this core knows. Give it a game's ZIP file as MAME names it (such as epo_ebox.zip) or its bare ROM image.",
+		"reason.analog": "analog sticks or a steering wheel",
+		"reason.keyboard": "a keyboard and mouse",
+		"reason.motion": "a camera or motion sensor",
+		"reason.scanner": "a card scanner",
+		"reason.xavix2": "the XaviX 2 machine",
+		"slot.game": "Game",
+		"slot.game.help": "The XaviX game: its ZIP file as MAME names it (such as epo_ebox.zip), or its bare ROM image (.bin). Only the exact images XaviXEmu knows are accepted.",
+		"slot.savedata": "Save data",
+		"slot.savedata.help": "The game's remembered data to start with, in place of a fresh game. This is the file that Emulator > Export Save Data... writes, named after the game (such as epo_ebox.sav). Put it back under the same name. The file is never changed. Leave it empty to start fresh."
+	}
+}

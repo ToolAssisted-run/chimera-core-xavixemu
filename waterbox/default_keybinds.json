@@ -1,0 +1,16 @@
+{
+  "_comment": [
+    "Default bindings for the XaviX pad: the arrow keys and the first game controller's directional pad and left stick are the four directions, Z or the controller's A is OK, X or the controller's B is Back, and Enter or the controller's Start is Pause (used by the racing and tilt games only)."
+  ],
+  "AllTrollers": {
+    "XaviX": {
+      "Up": "Up, J1 POV0U, X1 DpadUp, X1 LStickUp",
+      "Down": "Down, J1 POV0D, X1 DpadDown, X1 LStickDown",
+      "Left": "Left, J1 POV0L, X1 DpadLeft, X1 LStickLeft",
+      "Right": "Right, J1 POV0R, X1 DpadRight, X1 LStickRight",
+      "OK": "Z, J1 B1, X1 A",
+      "Back": "X, J1 B2, X1 B",
+      "Pause": "Enter, J1 B10, X1 Start"
+    }
+  }
+}

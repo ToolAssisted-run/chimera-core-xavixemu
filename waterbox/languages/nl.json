@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' heeft de grootte en controlesom van %2, maar is niet hetzelfde image.",
+		"error.bad_zip": "'%1' is geen leesbaar ZIP-bestand.",
+		"error.no_game": "Er zit geen spelbestand in het project.",
+		"error.no_machine": "Er was niet genoeg geheugen om de machine te maken.",
+		"error.not_plain": "%1 heeft %2 nodig, wat deze core niet ondersteunt. Hij speelt alleen XaviX-spellen die een gewone controller gebruiken.",
+		"error.not_read": "'%1' kon niet worden gelezen.",
+		"error.save_name": "Het bestand met opgeslagen gegevens heet '%1'. Alleen het bestand dat deze core voor het spel exporteert, '%2', kan worden teruggezet.",
+		"error.save_size": "'%1' is %2 bytes. De opgeslagen gegevens van het spel zijn %3 bytes.",
+		"error.too_large": "'%1' is te groot voor een XaviX-spel.",
+		"error.unknown_game": "'%1' is geen XaviX-spel dat deze core kent. Geef het ZIP-bestand van een spel zoals MAME het noemt (bijvoorbeeld epo_ebox.zip) of alleen het ROM-image.",
+		"reason.analog": "analoge sticks of een stuur",
+		"reason.keyboard": "een toetsenbord en muis",
+		"reason.motion": "een camera of bewegingssensor",
+		"reason.scanner": "een kaartlezer",
+		"reason.xavix2": "de XaviX 2-machine",
+		"slot.game": "Spel",
+		"slot.game.help": "Het XaviX-spel: het ZIP-bestand zoals MAME het noemt (bijvoorbeeld epo_ebox.zip) of alleen het ROM-image (.bin). Alleen de exacte images die XaviXEmu kent worden geaccepteerd.",
+		"slot.savedata": "Opgeslagen gegevens",
+		"slot.savedata.help": "De onthouden gegevens van het spel om mee te beginnen, in plaats van een nieuw spel. Dit is het bestand dat Emulator > Opgeslagen gegevens exporteren... schrijft, genoemd naar het spel (bijvoorbeeld epo_ebox.sav). Zet het terug onder dezelfde naam. Het bestand wordt nooit gewijzigd. Laat leeg om opnieuw te beginnen."
+	}
+}

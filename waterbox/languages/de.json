@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "'%1' hat die Größe und Prüfsumme von %2, ist aber nicht dasselbe Abbild.",
+		"error.bad_zip": "'%1' ist keine lesbare ZIP-Datei.",
+		"error.no_game": "Im Projekt ist keine Spieldatei.",
+		"error.no_machine": "Es war nicht genug Speicher da, um die Maschine zu erstellen.",
+		"error.not_plain": "%1 braucht %2, was dieser Core nicht unterstützt. Er spielt nur XaviX-Spiele, die ein einfaches Steuerkreuz verwenden.",
+		"error.not_read": "'%1' konnte nicht gelesen werden.",
+		"error.save_name": "Die Spielstanddatei heißt '%1'. Nur die Datei, die dieser Core für das Spiel exportiert, '%2', kann zurückgespielt werden.",
+		"error.save_size": "'%1' hat %2 Bytes. Der Spielstand des Spiels hat %3 Bytes.",
+		"error.too_large": "'%1' ist zu groß für ein XaviX-Spiel.",
+		"error.unknown_game": "'%1' ist kein XaviX-Spiel, das dieser Core kennt. Gib die ZIP-Datei eines Spiels, wie MAME sie nennt (etwa epo_ebox.zip), oder sein reines ROM-Abbild an.",
+		"reason.analog": "Analogsticks oder ein Lenkrad",
+		"reason.keyboard": "eine Tastatur und Maus",
+		"reason.motion": "eine Kamera oder einen Bewegungssensor",
+		"reason.scanner": "einen Kartenscanner",
+		"reason.xavix2": "die XaviX-2-Maschine",
+		"slot.game": "Spiel",
+		"slot.game.help": "Das XaviX-Spiel: seine ZIP-Datei, wie MAME sie nennt (etwa epo_ebox.zip), oder sein reines ROM-Abbild (.bin). Nur die genauen Abbilder, die XaviXEmu kennt, werden angenommen.",
+		"slot.savedata": "Spielstand",
+		"slot.savedata.help": "Die gespeicherten Daten des Spiels, mit denen es beginnt, statt eines neuen Spiels. Das ist die Datei, die Emulator > Spielstand exportieren... schreibt, nach dem Spiel benannt (etwa epo_ebox.sav). Gib sie unter demselben Namen zurück. Die Datei wird nie verändert. Leer lassen, um neu zu beginnen."
+	}
+}

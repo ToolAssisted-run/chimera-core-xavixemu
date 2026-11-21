@@ -1,0 +1,40 @@
+{
+  "package": "xavixemu",
+  "effectiveTerms": "BSD-3-Clause",
+  "commercialUse": "allowed under the BSD 3-Clause and MIT licences",
+  "note": "The built core combines this repository's MIT integration with XaviXEmu's emulation sources (src/core and sha1.c), which are BSD 3-Clause, and the miniz ZIP library XaviXEmu carries, which is MIT. XaviXEmu's hardware behaviour was adapted from MAME source files that are marked BSD-3-Clause (its THIRD_PARTY_NOTICES.md lists them). XaviXEmu's Windows front end is not built into it. No game's data is part of the package.",
+  "components": [
+    {
+      "name": "chimera-core-xavixemu (integration)",
+      "license": "MIT",
+      "url": "https://github.com/ToolAssisted-run/chimera-core-xavixemu",
+      "commit": "{selfCommit}",
+      "file": "LICENSE",
+      "sourceUrl": "https://github.com/ToolAssisted-run/chimera-core-xavixemu/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "XaviXEmu (the emulation core: src/core, sha1.c)",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/BillyJr0127/XaviXEmu",
+      "commit": "{submodule:extern/XaviXEmu}",
+      "file": "extern/XaviXEmu/LICENSE",
+      "sourceUrl": "https://github.com/BillyJr0127/XaviXEmu/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "MAME (source of XaviXEmu's hardware behaviour)",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/mamedev/mame",
+      "commit": "cf2d7a9be259552a3b493156e50e9149b6856448",
+      "file": "extern/XaviXEmu/THIRD_PARTY_NOTICES.md",
+      "sourceUrl": "https://github.com/mamedev/mame/archive/cf2d7a9be259552a3b493156e50e9149b6856448.tar.gz"
+    },
+    {
+      "name": "miniz (ZIP reading; the copy bundled in XaviXEmu)",
+      "license": "MIT",
+      "url": "https://github.com/BillyJr0127/XaviXEmu/tree/main/third_party/miniz",
+      "commit": "{submodule:extern/XaviXEmu}",
+      "file": "extern/XaviXEmu/third_party/miniz/LICENSE",
+      "sourceUrl": "https://github.com/BillyJr0127/XaviXEmu/archive/{commit}.tar.gz"
+    }
+  ]
+}

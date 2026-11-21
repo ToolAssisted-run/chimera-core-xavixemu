@@ -1,0 +1,23 @@
+{
+	"texts": {
+		"error.bad_image": "Tiedoston '%1' koko ja tarkistussumma ovat samat kuin pelillä %2, mutta se ei ole sama levykuva.",
+		"error.bad_zip": "'%1' ei ole luettava ZIP-tiedosto.",
+		"error.no_game": "Projektissa ei ole pelitiedostoa.",
+		"error.no_machine": "Muisti ei riittänyt koneen luomiseen.",
+		"error.not_plain": "%1 vaatii: %2. Tämä ydin ei tue sitä. Se pelaa vain XaviX-pelejä, jotka käyttävät tavallista ohjainta.",
+		"error.not_read": "Tiedostoa '%1' ei voitu lukea.",
+		"error.save_name": "Tallennustiedoston nimi on '%1'. Takaisin voi laittaa vain tiedoston, jonka tämä ydin vie pelille, '%2'.",
+		"error.save_size": "'%1' on %2 tavua. Pelin tallennustiedot ovat %3 tavua.",
+		"error.too_large": "'%1' on liian suuri XaviX-peliksi.",
+		"error.unknown_game": "'%1' ei ole peli, jonka tämä ydin tuntee. Anna pelin ZIP-tiedosto siten kuin MAME sen nimeää (esimerkiksi epo_ebox.zip) tai pelkkä ROM-levykuva.",
+		"reason.analog": "analogisia sauvoja tai ohjauspyörä",
+		"reason.keyboard": "näppäimistö ja hiiri",
+		"reason.motion": "kamera tai liiketunnistin",
+		"reason.scanner": "korttilukija",
+		"reason.xavix2": "XaviX 2 -kone",
+		"slot.game": "Peli",
+		"slot.game.help": "XaviX-peli: sen ZIP-tiedosto siten kuin MAME sen nimeää (esimerkiksi epo_ebox.zip) tai pelkkä ROM-levykuva (.bin). Vain tarkat levykuvat, jotka XaviXEmu tuntee, hyväksytään.",
+		"slot.savedata": "Tallennustiedot",
+		"slot.savedata.help": "Pelin muistetut tiedot, joilla aloitetaan uuden pelin sijaan. Tämä on tiedosto, jonka Emulaattori > Vie tallennustiedot... kirjoittaa, nimetty pelin mukaan (esimerkiksi epo_ebox.sav). Laita se takaisin samalla nimellä. Tiedostoa ei koskaan muuteta. Jätä tyhjäksi aloittaaksesi alusta."
+	}
+}
