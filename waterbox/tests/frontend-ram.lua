@@ -46,40 +46,43 @@ meta.metaPath = job.meta
 local DOMAIN = job.domain
 if DOMAIN == nil or DOMAIN == "" then DOMAIN = "RAM" end
 
-local sysid = emu.getsystemid()
-if sysid ~= "XAVIX" then
-	finish("ERROR", "wrong system id: " .. tostring(sysid))
+local function body()
+	if emu.getcorename() ~= "XaviXEmu" then
+		finish("ERROR", "wrong core: " .. tostring(emu.getcorename()))
+	end
+
+	pcall(function() client.speedmode(6400) end)
+	pcall(function() client.invisibleemulation(true) end)
+
+	local frames = tonumber(job.frames) or 120
+	for _ = 1, frames do
+		emu.frameadvance()
+	end
+
+	meta.frames = emu.framecount()
+	meta.lag = emu.lagcount()
+	meta.height = client.bufferheight()
+	pcall(function()
+		memory.usememorydomain(DOMAIN)
+		meta.ramsize = memory.getcurrentmemorydomainsize()
+		meta.ramhash = memory.hash_region(0, meta.ramsize, DOMAIN)
+	end)
+
+	if job.shot ~= nil and job.shot ~= "" then
+		client.screenshot(job.shot)
+	end
+
+	local ram = memory.read_bytes_as_array(0, meta.ramsize, DOMAIN)
+	local chunks = {}
+	for i = 1, #ram do
+		chunks[i] = string.char(ram[i])
+	end
+	writeAll(job.out, table.concat(chunks))
+
+	finish("OK", "")
 end
-if emu.getcorename() ~= "XaviXEmu" then
-	finish("ERROR", "wrong core: " .. tostring(emu.getcorename()))
+
+local ok, err = xpcall(body, debug.traceback)
+if not ok then
+	finish("ERROR", (tostring(err):gsub("%s*\n%s*", " | ")))
 end
-
-pcall(function() client.speedmode(6400) end)
-pcall(function() client.invisibleemulation(true) end)
-
-local frames = tonumber(job.frames) or 120
-for _ = 1, frames do
-	emu.frameadvance()
-end
-
-meta.frames = emu.framecount()
-meta.lag = emu.lagcount()
-meta.height = client.bufferheight()
-pcall(function()
-	memory.usememorydomain(DOMAIN)
-	meta.ramsize = memory.getcurrentmemorydomainsize()
-	meta.ramhash = memory.hash_region(0, meta.ramsize, DOMAIN)
-end)
-
-if job.shot ~= nil and job.shot ~= "" then
-	client.screenshot(job.shot)
-end
-
-local ram = memory.read_bytes_as_array(0, meta.ramsize, DOMAIN)
-local chunks = {}
-for i = 1, #ram do
-	chunks[i] = string.char(ram[i])
-end
-writeAll(job.out, table.concat(chunks))
-
-finish("OK", "")
